@@ -4,6 +4,7 @@ public class Intervalo{
     int i, j, cont=0;
 
     System.out.println("Intervalo de 1 a 2500");
+    System.out.println();
     
     System.out.println("Números que divididos por 11 tem resto 5: ");
     for(i = 1; i <=2500; i++){
@@ -12,6 +13,7 @@ public class Intervalo{
         else{System.out.printf("%d", i);}
       }
     }
+    System.out.println();
     System.out.println();
     
     System.out.println("Números pares: ");
@@ -22,6 +24,7 @@ public class Intervalo{
       }
     }
     System.out.println();
+    System.out.println();
     
     System.out.println("Números impares: ");
     for(i = 1; i <=2500; i++){
@@ -30,6 +33,7 @@ public class Intervalo{
         else{System.out.printf("%d", i);}
       }
     }
+    System.out.println();
     System.out.println();
     
     System.out.println("Números primos: ");

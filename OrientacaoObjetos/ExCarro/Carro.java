@@ -8,12 +8,22 @@ public class Carro{
 	public String modelo;
 	public String marca;
 
-	public void acelerar(){
-		velocidade = velocidade + (potencia * 0.01);
-		combustivel = combustivel - (potencia * 0.005);
+	public int acelerar(){
+    double a, b;
+    a = potencia*0.01;
+    b = potencia*0.005;
+    if (combustivel-b > 0){
+      velocidade = velocidade + a;
+		  combustivel = combustivel - b;
+      return 0;
+    }else{return 1;}
 	}
-	public void abastecer(double qtde){
-		combustivel = combustivel+qtde;
+	public int abastecer(double qtde){
+    if (combustivel+qtde < capacidadeCombustivel){
+      combustivel = combustivel+qtde;
+      return 0;
+    }
+    else{return 1;}
 	}
 
 	public String toString(){

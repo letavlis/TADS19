@@ -5,7 +5,8 @@ public class Main{
 		
 		Carro carro1, carro2, carro3;
 		Scanner scan = new Scanner(System.in);
-		int escolha, i=0, x, fim=1;
+		int escolha, i=0, fim=1;
+    double x;
 
 		carro1 = new Carro();
 		carro1.marca = "Dodge";
@@ -52,15 +53,23 @@ public class Main{
 					System.out.print("-Escolha uma opção: ");
 					escolha = scan.nextInt();
 					if (escolha == 1) {
-						carro1.acelerar();
+            x = carro1.acelerar();
+            if (x == 1){
+              System.out.println("Quantidade de combustivel insuficiente, abasteça por favor.");
+              x=0;
+            }            
 					}
 					else if (escolha == 2){
 						System.out.println("Quantos litros deseja abastecer? ");
 						x = scan.nextInt();
-						carro1.abastecer(x);
+            x = carro1.abastecer(x);
+            if (x == 1){
+              System.out.println("Esse valor ultrapassa a quantidade suportada pelo tanque de combustivel, tente novamente");
+              x=0;
+            }
 					}
 					else if (escolha == 3){
-						System.out.print("Velociadade atual: ");
+						System.out.print("\nVelociadade atual: ");
 						System.out.println(carro1.velocidade);
 						System.out.print("Quantidade de combustivel no tanque: ");
 						System.out.println(carro1.combustivel);
@@ -72,7 +81,7 @@ public class Main{
 			}
 			//else if (ecolha == 1){}
 			//else if (ecolha == 1){}
-			System.out.print("Continuar? 1.Sim / 2.Nao ");
+			System.out.print("\nContinuar? 1.Sim / 2.Nao ");
 			fim = scan.nextInt();
 		}
 	}

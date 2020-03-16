@@ -3,11 +3,74 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 
-		Carro carro1, carro2, carro3;
+		Carro[] carros;
+		Carro selecionado;
 		Scanner scan = new Scanner(System.in);
-		int escolha, i, fim = 1;
+		int escolha, escolha2, fim = 1;
 		double x;
 
+		carros = new Carro[3];
+
+
+        for (int i = 0; i < carros.length; i++) {
+            carros[i] = new Carro();
+        }
+		// fazer a inicialização dos carros
+		//--->
+
+		while (escolha != 4) {
+			
+			System.out.println("Opções:");
+			for(int i = 0; i < carros.length; i++){
+				System.out.println((i+1)+" - "+carros[i].modelo);
+			}
+			System.out.println("4 - Sair")
+
+			System.out.printl("\n\nEscolha uma opção:");
+			escolha = scan.nextInt();
+
+			if (escolha > 0 && escolha <= carros.length) {
+				selecionado = carros[escolha - 1];
+
+				while (escolha2 != 4) {
+					System.out.println("-Menu-");
+					System.out.println("1.Acelerar");
+					System.out.println("2.Abastecer");
+					System.out.println("3.Estado atual");
+					System.out.println("4.Sair");
+					System.out.println();
+					
+					escolha2 = scan.nextInt();
+					if (escolha2 == 1) {
+						x = selecionado.acelerar();
+						if (x == 1) {
+							System.out.println("Quantidade de combustivel insuficiente, abasteça por favor.");
+						}
+					} else if (escolha2 == 2) {
+						System.out.println("Quantos litros deseja abastecer? ");
+						x = scan.nextInt();
+						x = selecionado.abastecer(x);
+						if (x == 1) {
+							System.out.println(
+									"Esse valor ultrapassa a quantidade suportada pelo tanque de combustivel, tente novamente");
+						}
+					} else if (escolha2 == 3) {
+						System.out.print("\nVelociadade atual: ");
+						System.out.println(selecionado.velocidade);
+						System.out.print("Quantidade de combustivel no tanque: ");
+						System.out.println(selecionado.combustivel);
+					}
+					x = 0;
+				}
+			}
+			System.out.println("\nContinuar? 1.Sim / 2.Nao ");
+			fim = scan.nextInt();
+			if(fim == 2){
+				escolha = 4;
+			}
+		}
+	}
+}
 		/*
 		 * carro1 = new Carro(); carro1.marca = "Dodge"; carro1.modelo = "Charger 1969";
 		 * carro1.cor = "Laranja"; carro1.potencia = 375; carro1.capacidadeCombustivel =
@@ -21,124 +84,3 @@ public class Main {
 		 * carro3.cor = "Prata"; carro3.potencia = 140; carro3.capacidadeCombustivel =
 		 * 100;
 		 */
-
-		while (fim == 1) {
-			i = 0;
-			System.out.println("Opções de carros");
-			System.out.println("\nCARRO 1");
-			System.out.println(carro1.toString());
-			System.out.println("\nCARRO 2");
-			System.out.println(carro2.toString());
-			System.out.println("\nCARRO 3");
-			System.out.println(carro3.toString());
-
-			System.out.print("\n\nEscolha um carro: ");
-			escolha = scan.nextInt();
-
-			if (escolha == 1) {
-				while (i != 1) {
-					escolha = 0;
-					System.out.println("-Menu-");
-					System.out.println("1.Acelerar");
-					System.out.println("2.Abastecer");
-					System.out.println("3.Estado atual");
-					System.out.println("4.Sair");
-					System.out.println();
-					System.out.print("-Escolha uma opção: ");
-					escolha = scan.nextInt();
-					if (escolha == 1) {
-						x = carro1.acelerar();
-						if (x == 1) {
-							System.out.println("Quantidade de combustivel insuficiente, abasteça por favor.");
-						}
-					} else if (escolha == 2) {
-						System.out.println("Quantos litros deseja abastecer? ");
-						x = scan.nextInt();
-						x = carro1.abastecer(x);
-						if (x == 1) {
-							System.out.println(
-									"Esse valor ultrapassa a quantidade suportada pelo tanque de combustivel, tente novamente");
-						}
-					} else if (escolha == 3) {
-						System.out.print("\nVelociadade atual: ");
-						System.out.println(carro1.velocidade);
-						System.out.print("Quantidade de combustivel no tanque: ");
-						System.out.println(carro1.combustivel);
-					} else if (escolha == 4) {
-						i = 1;
-					}
-					x = 0;
-				}
-			} else if (escolha == 2) {
-				while (i != 1) {
-					escolha = 0;
-					System.out.println("-Menu-");
-					System.out.println("1.Acelerar");
-					System.out.println("2.Abastecer");
-					System.out.println("3.Estado atual");
-					System.out.println("4.Sair");
-					System.out.println();
-					System.out.print("-Escolha uma opção: ");
-					escolha = scan.nextInt();
-					if (escolha == 1) {
-						x = carro2.acelerar();
-						if (x == 1) {
-							System.out.println("Quantidade de combustivel insuficiente, abasteça por favor.");
-						}
-					} else if (escolha == 2) {
-						System.out.println("Quantos litros deseja abastecer? ");
-						x = scan.nextInt();
-						x = carro2.abastecer(x);
-						if (x == 1) {
-							System.out.println(
-									"Esse valor ultrapassa a quantidade suportada pelo tanque de combustivel, tente novamente");
-						}
-					} else if (escolha == 3) {
-						System.out.print("\nVelociadade atual: ");
-						System.out.println(carro2.velocidade);
-						System.out.print("Quantidade de combustivel no tanque: ");
-						System.out.println(carro2.combustivel);
-					} else if (escolha == 4) {
-						i = 1;
-					}
-				}
-			} else if (escolha == 3) {
-				while (i != 1) {
-					escolha = 0;
-					System.out.println("-Menu-");
-					System.out.println("1.Acelerar");
-					System.out.println("2.Abastecer");
-					System.out.println("3.Estado atual");
-					System.out.println("4.Sair");
-					System.out.println();
-					System.out.print("-Escolha uma opção: ");
-					escolha = scan.nextInt();
-					if (escolha == 1) {
-						x = carro3.acelerar();
-						if (x == 1) {
-							System.out.println("Quantidade de combustivel insuficiente, abasteça por favor.");
-						}
-					} else if (escolha == 2) {
-						System.out.println("Quantos litros deseja abastecer? ");
-						x = scan.nextInt();
-						x = carro3.abastecer(x);
-						if (x == 1) {
-							System.out.println(
-									"Esse valor ultrapassa a quantidade suportada pelo tanque de combustivel, tente novamente");
-						}
-					} else if (escolha == 3) {
-						System.out.print("\nVelociadade atual: ");
-						System.out.println(carro3.velocidade);
-						System.out.print("Quantidade de combustivel no tanque: ");
-						System.out.println(carro3.combustivel);
-					} else if (escolha == 4) {
-						i = 1;
-					}
-					x = 0;
-				}
-			}
-			System.out.println("\nContinuar? 1.Sim / 2.Nao ");
-			fim = scan.nextInt();
-		}
-	}
-}

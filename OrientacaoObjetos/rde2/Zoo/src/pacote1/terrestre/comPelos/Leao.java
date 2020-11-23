@@ -1,5 +1,7 @@
 package pacote1.terrestre.comPelos;
 
+import pacote1.Animal;
+
 public class Leao extends ComPelos{
     public Leao(final int codigo, final double peso, final String nome) {
         super(codigo, peso, nome);

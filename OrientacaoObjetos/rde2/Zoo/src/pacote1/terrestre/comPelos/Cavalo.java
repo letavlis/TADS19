@@ -1,5 +1,7 @@
 package pacote1.terrestre.comPelos;
 
+import pacote1.Animal;
+
 public class Cavalo extends ComPelos {
     public Cavalo(int codigo, double peso, String nome) {
         super(codigo, peso, nome);
@@ -7,7 +9,7 @@ public class Cavalo extends ComPelos {
 
     @Override
     public void apararPelo() {
-        System.out.println("O cavalo "+nome+" está com a crina aparada");
+        System.out.println("O cavalo " + nome + " está com a crina aparada");
     }
 
     @Override

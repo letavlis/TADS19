@@ -3,11 +3,11 @@ import pacote1.aquaticos.Aquaticos;
 import pacote1.aquaticos.Baleia;
 import pacote1.aquaticos.Peixe;
 import pacote1.terrestre.comPelos.Cavalo;
+import pacote1.terrestre.comPelos.ComPelos;
 import pacote1.terrestre.comPelos.Leao;
 import pacote1.terrestre.comPelos.Vaca;
 import pacote1.terrestre.semPelos.Cascavel;
 import pacote1.terrestre.semPelos.Galinha;
-
 public class Main {
     public static void main(String[] args){
         Animal[]  animal = new Animal[7];
@@ -30,5 +30,19 @@ public class Main {
         for(int i = 0; i < animal.length; i++){
             animal[i].emitirSom();
         }
+        for(int i = 0; i < animal.length; i++){
+            animal[i].mover();
+        }
+        for (int i = 2; i < 5; i++){
+            if (animal[i] == leao){
+                leao.apararPelo();
+            }
+            else if (animal[i] == cavalo){
+                cavalo.apararPelo();
+            }
+            else  if (animal[i] == vaca){
+                vaca.apararPelo();
+            }
+        }
     }
-
+}

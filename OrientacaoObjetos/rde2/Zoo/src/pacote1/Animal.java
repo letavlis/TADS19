@@ -1,5 +1,15 @@
 package pacote1;
 
-public class Animal<string> {
-    protected string[] nome
+public abstract class Animal{
+    protected String nome;
+    protected double peso;
+    protected int codigo;
+
+    public Animal( int codigo, double peso, String nome){
+        this.nome = nome;
+        this.codigo = codigo;
+        this.peso = peso;
+    }
+    public abstract void mover();
+    public abstract void emitirSom();
 }

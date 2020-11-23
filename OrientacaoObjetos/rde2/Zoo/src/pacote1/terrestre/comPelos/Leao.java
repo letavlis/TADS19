@@ -1,7 +1,7 @@
 package pacote1.terrstre.comPelos;
 
-public class Vaca extends ComPelos{
-    public Vaca(int codigo, double peso, String nome) {
+public class Leao extends ComPelos{
+    public Leao(final int codigo, final double peso, final String nome) {
         super(codigo, peso, nome);
     }
 

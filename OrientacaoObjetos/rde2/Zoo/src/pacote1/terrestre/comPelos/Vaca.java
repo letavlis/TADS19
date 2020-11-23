@@ -1,4 +1,4 @@
-package pacote1.terrstre.comPelos;
+package pacote1.terrestre.comPelos;
 
 public class Vaca extends ComPelos{
     public Vaca(int codigo, double peso, String nome) {

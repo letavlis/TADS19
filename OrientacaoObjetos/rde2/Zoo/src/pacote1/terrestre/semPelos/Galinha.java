@@ -1,4 +1,4 @@
-package pacote1.terrstre.semPelos;
+package pacote1.terrestre.semPelos;
 
 public class Galinha extends SemPelos {
     public Galinha(int codigo, double peso, String nome) {

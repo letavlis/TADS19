@@ -1,4 +1,4 @@
-package pacote1.terrstre.comPelos;
+package pacote1.terrestre.comPelos;
 
 public class Leao extends ComPelos{
     public Leao(final int codigo, final double peso, final String nome) {

@@ -1,4 +1,4 @@
-package pacote1.terrstre.semPelos;
+package pacote1.terrestre.semPelos;
 
 public class Cascavel extends SemPelos {
     public Cascavel(int codigo, double peso, String nome) {

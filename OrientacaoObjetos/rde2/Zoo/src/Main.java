@@ -27,9 +27,8 @@ public class Main {
         animal[5] = galinha;
         animal[6] = cascavel;
         
-        /*for(int i = 0; i <= animal.length; i++){
+        for(int i = 0; i < animal.length; i++){
             animal[i].emitirSom();
-        }*/
-
+        }
     }
-}
+

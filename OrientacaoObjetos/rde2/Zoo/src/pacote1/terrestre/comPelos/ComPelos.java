@@ -1,6 +1,6 @@
-package pacote1.terrstre.comPelos;
+package pacote1.terrestre.comPelos;
 
-import pacote1.terrstre.Terrestre;
+import pacote1.terrestre.Terrestre;
 
 public abstract class ComPelos extends Terrestre {
     public ComPelos(int codigo, double peso, String nome) {

@@ -7,11 +7,11 @@ public class Cascavel extends SemPelos {
 
     @Override
     public void mover() {
-
+        System.out.println("A cobra "+nome+" está rastejando");
     }
 
     @Override
     public void emitirSom() {
-
+        System.out.println("A cobra "+nome+" esssssssstá ssssssibilando sssssssssssss");
     }
 }

@@ -7,16 +7,16 @@ public class Cavalo extends ComPelos {
 
     @Override
     public void apararPelo() {
-
+        System.out.println("O cavalo "+nome+" está com a crina aparada");
     }
 
     @Override
     public void mover() {
-
+        System.out.println("O cavalo "+nome+" está galopando"); 
     }
 
     @Override
     public void emitirSom() {
-
+        System.out.println("O cavalo "+nome+" está relinchando Hin in in");
     }
 }

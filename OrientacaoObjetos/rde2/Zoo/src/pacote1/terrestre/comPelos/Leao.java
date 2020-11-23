@@ -7,16 +7,17 @@ public class Leao extends ComPelos{
 
     @Override
     public void apararPelo() {
+        System.out.println("O leão "+nome+" está com a juba aparada");
 
     }
 
     @Override
     public void mover() {
-
+        System.out.println("O leão "+nome+" está andando");
     }
 
     @Override
     public void emitirSom() {
-
+        System.out.println("O leão "+nome+" está rugindo RAWR!");
     }
 }

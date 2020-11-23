@@ -12,11 +12,11 @@ public class Vaca extends ComPelos{
 
     @Override
     public void mover() {
-        
+        System.out.println("A vaca "+nome+" está andando");        
     }
 
     @Override
     public void emitirSom() {
-
+        System.out.println("A vaca "+nome+" está mugindo Muuuuuuu");
     }
 }

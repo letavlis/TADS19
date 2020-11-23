@@ -2,16 +2,15 @@ import pacote1.Animal;
 import pacote1.aquaticos.Aquaticos;
 import pacote1.aquaticos.Baleia;
 import pacote1.aquaticos.Peixe;
-import pacote1.terrstre.comPelos.Cavalo;
-import pacote1.terrstre.comPelos.Leao;
-import pacote1.terrstre.comPelos.Vaca;
-import pacote1.terrstre.semPelos.Cascavel;
-import pacote1.terrstre.semPelos.Galinha;
-import sun.security.krb5.internal.NetClient;
+import pacote1.terrestre.comPelos.Cavalo;
+import pacote1.terrestre.comPelos.Leao;
+import pacote1.terrestre.comPelos.Vaca;
+import pacote1.terrestre.semPelos.Cascavel;
+import pacote1.terrestre.semPelos.Galinha;
 
 public class Main {
     public static void main(String[] args){
-        Animal[]  animal = new Animal[6];
+        Animal[]  animal = new Animal[7];
         Baleia baleia = new Baleia(202001, 5400, "Willy", 4);
         Peixe peixe = new Peixe(202002, 0.150, "nemo", 6);
         Cavalo cavalo = new Cavalo(202003,1000,"Pé de pano");
@@ -27,9 +26,10 @@ public class Main {
         animal[4] = vaca;
         animal[5] = galinha;
         animal[6] = cascavel;
-
-
-
+        
+        /*for(int i = 0; i <= animal.length; i++){
+            animal[i].emitirSom();
+        }*/
 
     }
 }

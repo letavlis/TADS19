@@ -7,11 +7,11 @@ public class Galinha extends SemPelos {
 
     @Override
     public void mover() {
-
+        System.out.println("A galinha "+nome+" está andando");
     }
 
     @Override
     public void emitirSom() {
-
+        System.out.println("A galinha "+nome+" está cacarejando có có có");
     }
 }

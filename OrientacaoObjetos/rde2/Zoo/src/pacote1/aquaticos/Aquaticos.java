@@ -9,6 +9,4 @@ public abstract class Aquaticos extends Animal {
         super(codigo, peso, nome);
         this.numeroBarbatanas = numeroBarbatanas;
     }
-
-
 }

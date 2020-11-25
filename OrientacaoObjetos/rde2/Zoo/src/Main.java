@@ -33,15 +33,10 @@ public class Main {
         for(int i = 0; i < animal.length; i++){
             animal[i].mover();
         }
-        for (int i = 2; i < 5; i++){
-            if (animal[i] == leao){
-                leao.apararPelo();
-            }
-            else if (animal[i] == cavalo){
-                cavalo.apararPelo();
-            }
-            else  if (animal[i] == vaca){
-                vaca.apararPelo();
+        for (int i = 0; i < animal.length; i++){
+            if ((animal[i] instanceof ComPelos)){
+              ComPelos obj =  (ComPelos) animal[i];
+              obj.apararPelo();
             }
         }
     }

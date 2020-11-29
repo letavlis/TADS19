@@ -2,3 +2,5 @@
 classroom
 Logistica
 .idea
+*.iml
+*.xml

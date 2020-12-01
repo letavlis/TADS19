@@ -15,11 +15,11 @@ public class Main{
     }
     public static void usePilha(){
         Pilha pilha;
-	    pilha = new Pilha();
-	    pilha.criaPilha();
-	    pilha.push(11);
-	    pilha.push(44);
-	    pilha.push(49);
+        pilha = new Pilha();
+        pilha.criaPilha();
+        pilha.push(11);
+        pilha.push(44);
+        pilha.push(49);
         pilha.push(88);
         pilha.pop();
         System.out.println("Imprime pilha");

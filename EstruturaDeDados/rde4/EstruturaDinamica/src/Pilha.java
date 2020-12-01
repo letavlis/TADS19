@@ -2,7 +2,7 @@ public class Pilha{
 	private Nodo top;
 
 	public void criaPilha(){
-		top = null;
+		top = null
 	}
 	public Nodo getTop(){
 		return top;

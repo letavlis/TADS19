@@ -14,7 +14,7 @@ public class Main{
         lista.printReverso();
     }
     public static void usePilha(){
-	    Pilha pilha;
+        Pilha pilha;
 	    pilha = new Pilha();
 	    pilha.criaPilha();
 	    pilha.push(11);
@@ -23,12 +23,12 @@ public class Main{
         pilha.push(88);
         pilha.pop();
         System.out.println("Imprime pilha");
-	    pilha.print(pilha.getTop());
+        pilha.print(pilha.getTop());
         System.out.println("Imprime inverso");
-	    pilha.printOrd(pilha.getTop());
+        pilha.printOrd(pilha.getTop());
     }
     public static void main(String[] args){
-	    //useLista();
-	    usePilha();
+        //useLista();
+        usePilha();
     }
 }

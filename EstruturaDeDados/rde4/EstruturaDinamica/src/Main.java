@@ -20,11 +20,12 @@ public class Main{
 	    pilha.push(11);
 	    pilha.push(44);
 	    pilha.push(49);
+        pilha.push(88);
+        pilha.pop();
         System.out.println("Imprime pilha");
 	    pilha.print(pilha.getTop());
         System.out.println("Imprime inverso");
 	    pilha.printOrd(pilha.getTop());
-	    pilha.pop();
     }
     public static void main(String[] args){
 	    //useLista();

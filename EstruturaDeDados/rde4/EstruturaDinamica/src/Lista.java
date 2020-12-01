@@ -18,4 +18,10 @@ public class Lista{
 		public void printReverso(){
 			printAux(prim);
 		}
+		private void printAux(Nodo n){
+			if (n == null)
+				return;
+			printAux(n.getProx());
+			System.out.println(n.getInfo());
+		}
 }

@@ -33,4 +33,11 @@ public class Fila {
         }
         else head=head.getProx();//senão atualiza a fila para começar no proximo elemento
     }
+    public void print(Nodo n){
+        if(n != null){
+            System.out.println(n.getInfo()+"->");
+            print(n.getProx());
+        }
+        else System.out.println("NULL");
+    }
 }

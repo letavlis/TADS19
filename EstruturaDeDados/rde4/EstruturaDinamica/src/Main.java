@@ -27,8 +27,23 @@ public class Main{
         System.out.println("Imprime inverso");
         pilha.printOrd(pilha.getTop());
     }
+    public static void useFila(){
+        Fila fila;
+        fila = new Fila();
+        fila.enqueue(11);
+        fila.enqueue(12);
+        fila.print();
+        fila.enqueue(13);
+        fila.print();
+        fila.dequeue();
+        fila.dequeue();
+        fila.print();
+        fila.dequeue();
+        fila.dequeue();
+    }
     public static void main(String[] args){
         //useLista();
-        usePilha();
+        //usePilha();
+        useFila();
     }
 }

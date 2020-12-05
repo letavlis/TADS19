@@ -32,12 +32,12 @@ public class Main{
         fila = new Fila();
         fila.enqueue(11);
         fila.enqueue(12);
-        fila.print();
+        fila.print(fila.getHead());
         fila.enqueue(13);
-        fila.print();
+        fila.print(fila.getHead());
         fila.dequeue();
         fila.dequeue();
-        fila.print();
+        fila.print(fila.getHead());
         fila.dequeue();
         fila.dequeue();
     }

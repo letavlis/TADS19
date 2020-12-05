@@ -2,7 +2,7 @@ public class Fila {
     private Nodo head;
     private Nodo tail;
 
-    public void Fila(){//construtor deixa a fila zerada
+    public Fila(){//construtor deixa a fila zerada
         tail = null;
         head = null;
     }

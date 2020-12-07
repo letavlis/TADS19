@@ -3,7 +3,7 @@ public class Pessoa {
     private int idade;
 
     public Pessoa(String nome, int idade) throws RuntimeException {
-        if (this.nome.length() < 10){
+        if(nome.length() < 10) {
             throw new RuntimeException("Tamanho ido nome invalido!!!");
         }
         this.nome = nome;

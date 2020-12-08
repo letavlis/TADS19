@@ -1,0 +1,2 @@
+Esta é uma linha de um arquivo
+Se quiser escrever numero: 10

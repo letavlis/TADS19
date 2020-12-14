@@ -20,13 +20,13 @@ public class Lista {
         novo.setInfo(i);
         novo.setProx(head);
         head = novo;
-    };
+    }
     public void addFinal(int i){
         Nodo novo = new Nodo();
         novo.setInfo(i);
         novo.setProx(tail);
         tail = novo;
-    };
+    }
     public void addInOrder(int i){
         if (head == null){
             addInicio(i);

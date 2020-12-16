@@ -24,7 +24,7 @@ public class Lista {
     public void addFinal(int i){
         Nodo novo = new Nodo();
         novo.setInfo(i);
-        novo.setProx(tail);
+        tail.setProx(tail);
         tail = novo;
     }
     public void addInOrder(int i){

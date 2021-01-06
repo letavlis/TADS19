@@ -1,11 +1,12 @@
 package controles;
+
 import modelos.Veiculo;
+
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 
-public class Mecanica {
+public class Mecanica implements Serializable {
 
     private String nome;
     private ArrayList<Veiculo> veiculos;
@@ -35,7 +36,7 @@ public class Mecanica {
 
     public Veiculo buscarVeiculo(int codigo){
         Veiculo v;
-        v = new Veiculo(codigo, "",,"","");
+        v = new Veiculo(codigo, "",0,"","");
         int pos = this.veiculos.indexOf(v);
         if(pos != -1){
             return this.veiculos.get(pos);
@@ -50,4 +51,19 @@ public class Mecanica {
         return null;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public ArrayList<Veiculo> getVeiculos() {
+        return veiculos;
+    }
+
+    public void setVeiculos(ArrayList<Veiculo> veiculos) {
+        this.veiculos = veiculos;
+    }
 }

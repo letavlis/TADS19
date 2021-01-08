@@ -18,6 +18,14 @@ public class Veiculo implements Serializable {
         this.modelo = modelo;
         this.cliente = cliente;
     }
+    //para utilizar no buscar veiculo pelo codigo
+    public Veiculo(int codigo){
+        this.codigo = codigo;
+    }
+    //para buscar só a placa
+    public Veiculo(String placa) {
+        this.placa = placa;
+    }
 
     @Override
     public boolean equals(Object o) {

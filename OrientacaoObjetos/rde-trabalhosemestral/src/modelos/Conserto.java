@@ -1,27 +1,16 @@
 package modelos;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Conserto implements Serializable {
-    private Servico servico;
+public class Conserto extends Servico{
     private double valorPecas;
     private ArrayList<String> pecas;
 
-    public Conserto(Servico servico, double valorPecas, ArrayList<String> pecas) {
-        this.servico = servico;
+    public Conserto(int codigo, String descricao, ArrayList<String> pecas, double valorMaodeObra, double valorPecas) {
+        super(codigo, descricao, valorMaodeObra);
         this.valorPecas = valorPecas;
         this.pecas = pecas;
     }
-
-    public Servico getServico() {
-        return servico;
-    }
-
-    public void setServico(Servico servico) {
-        this.servico = servico;
-    }
-
     public double getValorPecas() {
         return valorPecas;
     }
@@ -36,5 +25,10 @@ public class Conserto implements Serializable {
 
     public void setPecas(ArrayList<String> pecas) {
         this.pecas = pecas;
+    }
+
+    @Override
+    public double calculaTotal() {
+        return 0;
     }
 }

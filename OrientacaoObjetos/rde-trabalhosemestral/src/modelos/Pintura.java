@@ -1,35 +1,23 @@
 package modelos;
 
-import java.io.Serializable;
-
-public class Pintura implements Serializable {
-    private Servico servico;
+public class Pintura extends Servico {
     private String cor;
     private double valorTinta;
     private double valorCera;
 
-    public Pintura(Servico servico, String cor, double valorCera, double valorTinta) {
-        this.servico = servico;
+    public Pintura(int codigo, String descricao, String cor, double valorMaodeObra, double valorCera, double valorTinta) {
+        super(codigo, descricao, valorMaodeObra);
         this.cor = cor;
-        this.valorCera = getValorCera();
-        this.valorTinta = getValorTinta();
+        this.valorCera = valorCera;
+        this.valorTinta = valorTinta;
 
     }
-
-    public void setServico(Servico servico) {
-        this.servico = servico;
-    }
-
     public String getCor() {
         return cor;
     }
 
     public void setCor(String cor) {
         this.cor = cor;
-    }
-
-    public Servico getServico() {
-        return servico;
     }
 
     public double getValorTinta() {
@@ -46,5 +34,10 @@ public class Pintura implements Serializable {
 
     public void setValorCera(double valorCera) {
         this.valorCera = valorCera;
+    }
+
+    @Override
+    public double calculaTotal() {
+        return 0;
     }
 }

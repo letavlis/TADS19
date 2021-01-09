@@ -79,4 +79,15 @@ public class Veiculo implements Serializable {
     public void setCliente(String cliente) {
         this.cliente = cliente;
     }
+
+    @Override
+    public String toString() {
+        return "Veiculo{" +
+                "codigo=" + codigo +
+                ", placa='" + placa + '\'' +
+                ", ano=" + ano +
+                ", modelo='" + modelo + '\'' +
+                ", cliente='" + cliente + '\'' +
+                '}';
+    }
 }

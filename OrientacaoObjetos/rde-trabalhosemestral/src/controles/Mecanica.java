@@ -29,25 +29,27 @@ public class Mecanica implements Serializable {
         int codigo;
         Veiculo v = new Veiculo(placa);
         if (buscarVeiculo(v.getPlaca()) == null){
-            codigo = 1;
+            codigo = 0;
             do {
                 if(buscarVeiculo(codigo) != null){
                     codigo++;
                 }
             }while(buscarVeiculo(codigo) != null);
-            Veiculo v = new Veiculo(codigo,placa, ano, modelo, cliente);
+            v = new Veiculo(codigo, placa, ano, modelo, cliente);
             if(buscarVeiculo(v.getPlaca())==null){
                 this.veiculos.add(v);
                 return true;
             }
             return false;
         }
-        Veiculo v = new Veiculo(codigo,placa, ano, modelo, cliente);
-        if(buscarVeiculo(v.getPlaca())==null){
-            this.veiculos.add(v);
+        else {
+            codigo = v.getCodigo();
+            v.setAno(ano);
+            v.setModelo(modelo);
+            v.setCliente(cliente);
+            this.veiculos.add(codigo, v);
             return true;
         }
-        return false;
     }
 
     public Veiculo buscarVeiculo(int codigo){
@@ -81,5 +83,13 @@ public class Mecanica implements Serializable {
 
     public void setVeiculos(ArrayList<Veiculo> veiculos) {
         this.veiculos = veiculos;
+    }
+
+    @Override
+    public String toString() {
+        return "Mecanica{" +
+                "nome='" + nome + '\'' +
+                ", veiculos=" + veiculos +
+                '}';
     }
 }

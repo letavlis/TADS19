@@ -18,40 +18,31 @@ public class Mecanica implements Serializable {
     public boolean cadastraVeiculo(int codigo, String placa, int ano, String modelo, String cliente ){
         Veiculo v;
         v = new Veiculo(codigo, placa, ano, modelo, cliente);
-        if(buscarVeiculo(v.getPlaca())==null){
-            this.veiculos.add(v);
-            return true;
-        }
-       return false;
+        this.veiculos.add(codigo, v);
+        return true;        
     }
 
     public boolean cadastraVeiculo(String placa, int ano, String modelo, String cliente ){
         int codigo;
         Veiculo v = new Veiculo(placa);
-        if (buscarVeiculo(v.getPlaca()) == null){
-            codigo = 0;
-            do {
-                if(buscarVeiculo(codigo) != null){
-                    codigo++;
-                }
-            }while(buscarVeiculo(codigo) != null);
-            v = new Veiculo(codigo, placa, ano, modelo, cliente);
-            if(buscarVeiculo(v.getPlaca())==null){
-                this.veiculos.add(v);
-                return true;
+        if(buscarVeiculo(v.getPlaca())==null){
+          codigo = 0;
+          do {
+            if(buscarVeiculo(codigo) != null){
+              codigo++;        
             }
-            return false;
+          }while(buscarVeiculo(codigo) != null);
+          v = new Veiculo(codigo, placa, ano, modelo, cliente);
+          this.veiculos.add(v);
+          return true;
         }
         else {
-            codigo = v.getCodigo();
-            v.setAno(ano);
-            v.setModelo(modelo);
-            v.setCliente(cliente);
-            this.veiculos.add(codigo, v);
-            return true;
+          codigo = this.veiculos.indexOf(buscarVeiculo(placa)); 
+          this.veiculos.remove(codigo);
+          cadastraVeiculo(codigo, placa, ano, modelo, cliente);
+          return true;
         }
     }
-
     public Veiculo buscarVeiculo(int codigo){
         Veiculo v;
         v = new Veiculo(codigo);
@@ -90,6 +81,6 @@ public class Mecanica implements Serializable {
         return "Mecanica{" +
                 "nome='" + nome + '\'' +
                 ", veiculos=" + veiculos +
-                '}';
+                "}\n";
     }
 }

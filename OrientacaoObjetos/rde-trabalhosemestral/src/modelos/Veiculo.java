@@ -26,7 +26,7 @@ public class Veiculo implements Serializable {
     public Veiculo(String placa) {
         this.placa = placa;
     }
-
+    //para realizar a comparação dos codigos
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -34,7 +34,6 @@ public class Veiculo implements Serializable {
         Veiculo veiculo = (Veiculo) o;
         return codigo == veiculo.codigo;
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(codigo);
@@ -78,16 +77,5 @@ public class Veiculo implements Serializable {
 
     public void setCliente(String cliente) {
         this.cliente = cliente;
-    }
-
-    @Override
-    public String toString() {
-        return "Veiculo{" +
-                "codigo=" + codigo +
-                ", placa='" + placa + '\'' +
-                ", ano=" + ano +
-                ", modelo='" + modelo + '\'' +
-                ", cliente='" + cliente + '\'' +
-                '}';
     }
 }

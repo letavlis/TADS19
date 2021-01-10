@@ -12,6 +12,12 @@ public class Pintura extends Servico {
         this.valorTinta = valorTinta;
 
     }
+
+    public Pintura(int codigo) {
+        super(codigo);
+    }
+
+
     public String getCor() {
         return cor;
     }
@@ -38,6 +44,11 @@ public class Pintura extends Servico {
 
     @Override
     public double calculaTotal() {
-        return 0;
+        double a, b, c, total;
+        a = getValorCera();
+        b = getValorTinta();
+        c = getValorMaodeObra();
+        total = a+b+c;
+        return total;
     }
 }

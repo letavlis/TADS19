@@ -11,6 +11,11 @@ public class Conserto extends Servico{
         this.valorPecas = valorPecas;
         this.pecas = pecas;
     }
+
+    public Conserto(int codigo) {
+        super(codigo);
+    }
+
     public double getValorPecas() {
         return valorPecas;
     }

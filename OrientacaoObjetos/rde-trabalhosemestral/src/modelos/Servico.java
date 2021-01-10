@@ -1,6 +1,7 @@
 package modelos;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public abstract class Servico implements Serializable {
     private int codigo;
@@ -14,8 +15,27 @@ public abstract class Servico implements Serializable {
         this.valorMaodeObra = valorMaodeObra;
     }
 
-    public abstract double calculaTotal();
+    public Servico(int codigo) {
+        this.codigo = codigo;
+    }
 
+    public abstract double calculaTotal();
+    //para busca
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Servico servico = (Servico) o;
+        return codigo == servico.codigo;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigo);
+    }
+
+    //getter e setters
     public int getCodigo() {
         return codigo;
     }

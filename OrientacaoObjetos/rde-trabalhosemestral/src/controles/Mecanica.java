@@ -64,6 +64,16 @@ public class Mecanica implements Serializable {
         return true;
     }
 
+    //executa servico
+    public void executaServico(int codigo, Veiculo veiculo, Servico servico{
+
+    }
+    public void executaServico(Veiculo veiculo, Servico servico){
+        int codigo;
+        codigo = proximoCodigoExecucao();
+        executaServico(codigo, veiculo,servico);
+    }
+
     //buscas
     public Veiculo buscarVeiculo(int codigo){
         Veiculo v;
@@ -117,14 +127,16 @@ public class Mecanica implements Serializable {
         i = veiculos.size();
         return i;
     }
-    private int proximoCodigoServico(){
+    private int proximoCodigoServico() {
         int i;
         i = servicos.size();
         return i;
     }
-   /* private int proximoCodigoExecucao(){
-
-    }*/
+    private int proximoCodigoExecucao(){
+        int i;
+        i = execucoes.size();
+        return i;
+    }
 
 
     @Override

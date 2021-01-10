@@ -65,8 +65,9 @@ public class Mecanica implements Serializable {
     }
 
     //executa servico
-    public void executaServico(int codigo, Veiculo veiculo, Servico servico{
-
+    public void executaServico(int codigo, Veiculo veiculo, Servico servico){
+        ExecucaoServico e = new ExecucaoServico(codigo, veiculo, servico);
+        this.execucoes.add(e);
     }
     public void executaServico(Veiculo veiculo, Servico servico){
         int codigo;

@@ -1,6 +1,7 @@
 package Mecanica;
 
 import Mecanica.controles.Mecanica;
+import Mecanica.janelas.JanelaCadVeiculo;
 import Mecanica.janelas.Principal;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +16,7 @@ import javafx.util.Callback;
 public class MainGui extends Application{
 
     public static final String PRINCIPAL = "/fxml/Principal.fxml";
-    public static final String CADVEICULO = "/fxml/JanelaCadVeiculo";
+    public static final String CADVEICULO = "/fxml/JanelaCadVeiculo.fxml";
 
     private Mecanica mecanica;
 

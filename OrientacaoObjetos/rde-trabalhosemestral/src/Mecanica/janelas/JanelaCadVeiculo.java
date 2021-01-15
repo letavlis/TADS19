@@ -1,5 +1,7 @@
 package Mecanica.janelas;
 
+import Mecanica.MainGui;
+
 import Mecanica.controles.Mecanica;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -30,7 +32,7 @@ public class JanelaCadVeiculo implements Initializable {
         }
     }
     Mecanica mecanica;
-    Veiculo veiculo;
+
     public JanelaCadVeiculo(Mecanica mecanica){
         this.mecanica = mecanica;
     }
@@ -63,8 +65,7 @@ public class JanelaCadVeiculo implements Initializable {
         }
         else {
             mensagem(Alert.AlertType.INFORMATION, "Veiculo cadastrado");
-            //atualizaLista();
-            limpar();
+            MainGui.mudaCena(MainGui.PRINCIPAL, (aClass) -> new Principal(mecanica));
         }
 
     }

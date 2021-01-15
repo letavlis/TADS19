@@ -35,8 +35,7 @@ public class MainGui extends Application{
 
         Parent root = loader.load();
 
-        Scene scene = new Scene(base, Region.USE_PREF_SIZE,Region.USE_PREF_SIZE);
-
+        Scene scene = new Scene(base, Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
         stage.setScene(scene);
         stage.setTitle("Gerenciador de Mecanica");
 
@@ -56,7 +55,7 @@ public class MainGui extends Application{
             if (base.getChildren().stream().count()>0){
                 base.getChildren().remove(0);
             }
-            base.getChildren();
+            base.getChildren().add(novoRoot);
         }catch(Exception e){
             e.printStackTrace();
         }

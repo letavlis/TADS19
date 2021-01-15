@@ -1,5 +1,7 @@
-import controles.Mecanica;
-import janelas.Principal;
+package Mecanica;
+
+import Mecanica.controles.Mecanica;
+import Mecanica.janelas.Principal;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,8 +14,8 @@ import javafx.util.Callback;
 
 public class MainGui extends Application{
 
-    private static final String PRINCIPAL = "/fxml/Principal.fxml";
-    private static final String CADVEICULO = "/fxml/JanelaCadVeiculo";
+    public static final String PRINCIPAL = "/fxml/Principal.fxml";
+    public static final String CADVEICULO = "/fxml/JanelaCadVeiculo";
 
     private Mecanica mecanica;
 
@@ -29,17 +31,11 @@ public class MainGui extends Application{
         mecanica = new Mecanica("Teste");
         base = new StackPane();
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("fxml/Principal.fxml"));
-       // loader.setControllerFactory((aClass -> new JanelaCadVeiculo(mecanica)));
-
-        Parent root = loader.load();
-
         Scene scene = new Scene(base, Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
         stage.setScene(scene);
         stage.setTitle("Gerenciador de Mecanica");
 
-        mudaCena(MainGui.PRINCIPAL, (aClass) -> new Principal());
+        mudaCena(MainGui.PRINCIPAL, (aClass) -> new Principal(mecanica));
 
         stage.show();
     }

@@ -1,4 +1,4 @@
-package modelos;
+package Mecanica.modelos;
 
 import java.util.ArrayList;
 

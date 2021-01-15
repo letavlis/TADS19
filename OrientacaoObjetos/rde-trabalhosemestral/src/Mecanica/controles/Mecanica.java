@@ -1,6 +1,6 @@
-package controles;
+package Mecanica.controles;
 
-import modelos.*;
+import Mecanica.modelos.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;

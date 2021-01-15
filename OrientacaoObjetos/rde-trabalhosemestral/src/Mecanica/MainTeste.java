@@ -1,4 +1,6 @@
-import controles.Mecanica;
+package Mecanica;
+
+import Mecanica.controles.Mecanica;
 public class MainTeste {
     public static void main(String[] args) {
         Mecanica m = new Mecanica("Silva");

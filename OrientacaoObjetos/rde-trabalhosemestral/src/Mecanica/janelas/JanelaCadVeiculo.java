@@ -1,10 +1,10 @@
-package janelas;
+package Mecanica.janelas;
 
-import controles.Mecanica;
+import Mecanica.controles.Mecanica;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import modelos.Veiculo;
+import Mecanica.modelos.Veiculo;
 
 import java.net.URL;
 import java.util.ResourceBundle;

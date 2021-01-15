@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="janelas.JanelaCadVeiculo"
+          prefHeight="400.0" prefWidth="600.0">
+vgap = "5" hgap = "5">
+    <padding>
+        <Insets top="10" bottom="10" right="10" left="10" />
+    </padding>
+    <Label text="Placa:" GridPane.columnIndex="0" GridPane.rowIndex="0" labelFor="$tfPlaca"/>
+    <TextField fx:id="tfPlaca" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label text="Modelo:" GridPane.columnIndex="0" GridPane.rowIndex="1" labelFor="$tfModelo"/>
+    <TextField fx:id="tfModelo" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Ano:" GridPane.columnIndex="3" GridPane.rowIndex="0" labelFor=""/>
+    <ComboBox GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+    <Label text="Cliente:" GridPane.columnIndex="0" GridPane.rowIndex="3" labelFor="$tfCliente"/>
+    <TextField fx:id="tfCliente" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+</GridPane>

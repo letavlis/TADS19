@@ -1,27 +1,65 @@
+import controles.Mecanica;
+import janelas.Principal;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+
+
 public class MainGui extends Application{
+
+    private static final String PRINCIPAL = "/fxml/Principal.fxml";
+    private static final String CADVEICULO = "/fxml/JanelaCadVeiculo";
+
+    private Mecanica mecanica;
+
+    private static StackPane base;
+
     public static void main(String[] args){
         Application.launch(args);
     }
+
     @Override
     public void start(Stage stage) throws Exception{
 
+        mecanica = new Mecanica("Teste");
+        base = new StackPane();
+
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("fxml/JanelaCadVeiculo.fxml"));
+        loader.setLocation(getClass().getResource("fxml/Principal.fxml"));
+       // loader.setControllerFactory((aClass -> new JanelaCadVeiculo(mecanica)));
 
         Parent root = loader.load();
-        //VBox root = new VBox();
-        //root.setStyle("-fx-background-color: gray");
 
-        Scene scene = new Scene(root,400,600);
+        Scene scene = new Scene(base, Region.USE_PREF_SIZE,Region.USE_PREF_SIZE);
 
         stage.setScene(scene);
         stage.setTitle("Gerenciador de Mecanica");
 
+        mudaCena(MainGui.PRINCIPAL, (aClass) -> new Principal());
+
         stage.show();
     }
+
+    public static void mudaCena(String fxml, Callback controllerFactory){
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainGui.class.getResource(fxml));
+            loader.setControllerFactory(controllerFactory);
+
+            Parent novoRoot = loader.load();
+
+            if (base.getChildren().stream().count()>0){
+                base.getChildren().remove(0);
+            }
+            base.getChildren();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 }
+

@@ -11,7 +11,7 @@
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="janelas.JanelaCadVeiculo"
           prefHeight="400.0" prefWidth="600.0">
-vgap = "5" hgap = "5">
+    vgap = "5" hgap = "5">
     <padding>
         <Insets top="10" bottom="10" right="10" left="10" />
     </padding>

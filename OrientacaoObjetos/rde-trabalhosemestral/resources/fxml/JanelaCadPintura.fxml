@@ -25,4 +25,9 @@
     <Label text="Valor tinta:" GridPane.columnIndex="0" GridPane.rowIndex="4" labelFor="$tfTinta"/>
     <TextField fx:id="tfTinta" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
 
+    <HBox GridPane.columnIndex="3" GridPane.rowIndex="5" spacing="5">
+        <Button text="Adicionar" onAction="#cadastrar"/>
+        <Button text="Limpar" onAction="#limpar"/>
+    </HBox>
+
 </GridPane>

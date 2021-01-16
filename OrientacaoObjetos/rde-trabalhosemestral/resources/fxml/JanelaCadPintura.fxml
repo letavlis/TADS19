@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="Mecanica.janelas.JanelaCadPintura"
+          prefHeight="400.0" prefWidth="600.0" vgap = "5" hgap = "5">
+    <padding>
+        <Insets top="10" bottom="10" left="10" right="10"/>
+    </padding>
+    <Label text="Descrição:" GridPane.columnIndex="0" GridPane.rowIndex="0" labelFor="$tfDescricao"/>
+    <TextField fx:id="tfDescricao" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label text="Cor:" GridPane.columnIndex="0" GridPane.rowIndex="1" labelFor="$tfCor"/>
+    <TextField fx:id="tfCor" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Valor de mão de obra:" GridPane.columnIndex="0" GridPane.rowIndex="2" labelFor="$tfVMaoDeObra"/>
+    <TextField fx:id="tfVMaoDeObra" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Label text="Valor cera:" GridPane.columnIndex="0" GridPane.rowIndex="3" labelFor="$tfCera"/>
+    <TextField fx:id="tfCera" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <Label text="Valor tinta:" GridPane.columnIndex="0" GridPane.rowIndex="4" labelFor="$tfTinta"/>
+    <TextField fx:id="tfTinta" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+</GridPane>

@@ -28,10 +28,10 @@
                 <Label text="Veiculos"/>
                 <ListView fx:id="lstwVeiculo"/>
             </VBox>
-            <VBox spacing="5">
+           <!-- <VBox spacing="5">
                 <Label text="Servços"/>
                 <ListView/>
-            </VBox>
+            </VBox> -->
         </HBox>
     </center>
 

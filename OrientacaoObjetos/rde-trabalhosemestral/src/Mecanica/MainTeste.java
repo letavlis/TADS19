@@ -1,5 +1,11 @@
-import java.util.Arrays;
+package Mecanica;
+
+import Mecanica.controles.Mecanica;
+import Mecanica.modelos.Servico;
+import Mecanica.modelos.Veiculo;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class MainTeste {

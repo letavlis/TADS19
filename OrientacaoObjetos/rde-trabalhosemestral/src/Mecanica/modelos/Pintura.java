@@ -1,3 +1,5 @@
+package Mecanica.modelos;
+
 public class Pintura extends Servico{
 	private String cor;
 	private double valorTinta;

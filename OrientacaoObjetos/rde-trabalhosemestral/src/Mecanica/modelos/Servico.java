@@ -1,3 +1,5 @@
+package Mecanica.modelos;
+
 import java.io.Serializable;
 
 public class Servico implements Serializable{

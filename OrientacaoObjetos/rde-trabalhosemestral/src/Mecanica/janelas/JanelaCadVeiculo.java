@@ -27,7 +27,7 @@ public class JanelaCadVeiculo implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        for (int i=1900;i<=2021;i++){
+        for (int i=1980;i<=2021;i++){
             cbAno.getItems().add(i);
         }
         lstwPlacas.setCellFactory(veiculoListView -> new ListCell<>(){
@@ -53,7 +53,8 @@ public class JanelaCadVeiculo implements Initializable {
         String placa = tfPlaca.getText();
         String modelo = tfModelo.getText();
         String cliente = tfCliente.getText();
-        int ano = cbAno.getValue();
+        int ano;
+
 
         if (placa.isBlank() || placa.isEmpty()){
             //TODO melhorar a validação
@@ -70,6 +71,14 @@ public class JanelaCadVeiculo implements Initializable {
             mensagem(Alert.AlertType.ERROR,"cliente invalido!!");
             return;
         }
+        try{
+            ano = cbAno.getValue();
+        } catch (Exception e) {
+            //TODO melhorar a validação
+            mensagem(Alert.AlertType.ERROR,"Ano invalido!!");
+            return;
+        }
+
 
         //cadastrar veiculo
         if(!mecanica.cadastraVeiculo(placa, ano, modelo, cliente)){
@@ -97,6 +106,10 @@ public class JanelaCadVeiculo implements Initializable {
         tfModelo.setText("");
         cbAno.getSelectionModel().clearSelection();
         tfCliente.setText("");
+    }
+    @FXML
+    private void mostrarMenuPrincipal(){
+        MainGui.mudaCena(MainGui.PRINCIPAL, (aClass) -> new Principal(mecanica));
     }
 
 }

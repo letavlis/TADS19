@@ -20,7 +20,7 @@
                 <Insets bottom="10"/>
             </padding>
             <Button text="Cadastrar Veiculo" onAction="#mostrarCadastroVeiculo"/>
-            <Button text="Cadastrar Serviço" />
+            <Button text="Cadastrar Serviço" onAction="#mostrarCadastroServico" />
             <Button text="Executar Serviço" />
         </HBox>
     </top>

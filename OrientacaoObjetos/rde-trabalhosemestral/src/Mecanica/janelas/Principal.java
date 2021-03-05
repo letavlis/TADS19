@@ -54,4 +54,8 @@ public class Principal implements Initializable {
     private void mostrarCadastroVeiculo(){
         MainGui.mudaCena(MainGui.CADVEICULO, (aClass) -> new JanelaCadVeiculo(mecanica));
     }
+    @FXML
+    private void mostrarCadastroServico(){
+        MainGui.mudaCena(MainGui.CADSERVICO, (aClass)-> new JanelaCadServico(mecanica));
+    }
 }

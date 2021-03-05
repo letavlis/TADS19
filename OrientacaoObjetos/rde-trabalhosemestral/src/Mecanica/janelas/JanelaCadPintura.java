@@ -2,10 +2,14 @@ package Mecanica.janelas;
 
 import Mecanica.controles.Mecanica;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
-public class JanelaCadPintura {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class JanelaCadPintura implements Initializable {
     @FXML
     private TextField tfDescricao;
     @FXML
@@ -59,4 +63,8 @@ public class JanelaCadPintura {
         tfCor.setText("");
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

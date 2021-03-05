@@ -32,8 +32,14 @@
         <Button text="Adicionar" onAction="#cadastrar"/>
         <Button text="Limpar" onAction="#limpar"/>
     </HBox>
-    <HBox GridPane.columnIndex="0" GridPane.rowIndex="4" spacing="5" GridPane.columnSpan="4" GridPane.rowSpan="1">
-        <ListView fx:id="lstwPlacas"/>
-        <TextArea fx:id="txtaInfos"/>
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="4" spacing="10" GridPane.columnSpan="4" GridPane.rowSpan="1">
+        <VBox spacing="5">
+            <Label text="Veiculos"/>
+            <ListView fx:id="lstwPlacas"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Dados"/>
+            <TextArea fx:id="txtaInfos"/>
+        </VBox>
     </HBox>
 </GridPane>

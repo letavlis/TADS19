@@ -10,7 +10,7 @@
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="Mecanica.janelas.Principal"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="400.0" prefWidth="500.0">
     <padding>
         <Insets top="10" bottom="10" left="10" right="10"/>
     </padding>
@@ -20,6 +20,8 @@
                 <Insets bottom="10"/>
             </padding>
             <Button text="Cadastrar Veiculo" onAction="#mostrarCadastroVeiculo"/>
+            <Button text="Cadastrar Serviço" />
+            <Button text="Executar Serviço" />
         </HBox>
     </top>
     <center>
@@ -28,11 +30,13 @@
                 <Label text="Veiculos"/>
                 <ListView fx:id="lstwVeiculo"/>
             </VBox>
-           <!-- <VBox spacing="5">
-                <Label text="Servços"/>
+          <VBox spacing="5">
+                <Label text="Serviço"/>
                 <ListView/>
-            </VBox> -->
+            </VBox>
         </HBox>
     </center>
 
 </BorderPane>
+<!--
+-->

@@ -1,14 +1,14 @@
 package Mecanica.janelas;
 
 import Mecanica.MainGui;
-
 import Mecanica.controles.Mecanica;
+import Mecanica.modelos.Veiculo;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import Mecanica.modelos.Veiculo;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class JanelaCadVeiculo implements Initializable {
@@ -30,6 +30,18 @@ public class JanelaCadVeiculo implements Initializable {
         for (int i=1900;i<=2021;i++){
             cbAno.getItems().add(i);
         }
+        lstwPlacas.setCellFactory(veiculoListView -> new ListCell<>(){
+            @Override
+            protected void updateItem(Veiculo veiculo, boolean b) {
+                super.updateItem(veiculo, b);
+                if (veiculo != null){
+                    setText(veiculo.getPlaca());
+                }else {
+                    setText("");
+                }
+            }
+        });
+        atualizaLista();
     }
     Mecanica mecanica;
 
@@ -55,7 +67,7 @@ public class JanelaCadVeiculo implements Initializable {
         }
         if (cliente.isBlank() || cliente.isEmpty()){
             //TODO melhorar a validação
-            mensagem(Alert.AlertType.ERROR,"cliente invalida!!");
+            mensagem(Alert.AlertType.ERROR,"cliente invalido!!");
             return;
         }
 
@@ -69,13 +81,13 @@ public class JanelaCadVeiculo implements Initializable {
         }
 
     }
-    /*private void atualizaLista(){
-        List<Veiculo> lista = veiculo.getLista();
+    private void atualizaLista(){
+        List<Veiculo> veiculos = this.mecanica.getVeiculos();
         lstwPlacas.getItems().clear();
-        for(Veiculo v:lista){
+        for(Veiculo v:veiculos){
             lstwPlacas.getItems().add(v);
         }
-    }*/
+    }
     private void mensagem(Alert.AlertType type ,String msg){
         Alert alert = new Alert(type,msg);
         alert.showAndWait();

@@ -28,12 +28,12 @@
     <Label text="Cliente:" GridPane.columnIndex="0" GridPane.rowIndex="2" labelFor="$tfCliente"/>
     <TextField fx:id="tfCliente" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
-    <HBox GridPane.columnIndex="3" GridPane.rowIndex="3" spacing="5">
+    <HBox GridPane.columnIndex="3" GridPane.rowIndex="4" spacing="5">
         <Button text="Adicionar" onAction="#cadastrar"/>
         <Button text="Limpar" onAction="#limpar"/>
         <Button text="Voltar" onAction="#mostrarMenuPrincipal"/>
     </HBox>
-    <HBox GridPane.columnIndex="0" GridPane.rowIndex="4" spacing="10" GridPane.columnSpan="4" GridPane.rowSpan="1">
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="3" spacing="10" GridPane.columnSpan="4" GridPane.rowSpan="1">
         <VBox spacing="5">
             <Label text="Veiculos"/>
             <ListView fx:id="lstwPlacas"/>

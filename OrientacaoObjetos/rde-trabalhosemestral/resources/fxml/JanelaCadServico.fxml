@@ -16,8 +16,9 @@
     </padding>
     <HBox GridPane.columnIndex="3" GridPane.rowIndex="3" spacing="5">
         <Button text="Cadastrar Pitura" onAction="#mostrarCadastroPintura"/>
-        <!-- <Button text="Cadastrar Conserto" onAction="#cadastrarConserto"/>-->
+        <Button text="Cadastrar Conserto" onAction="#mostrarCadastroConserto"/>
         <Button text="Voltar" onAction="#mostrarMenuPrincipal"/>
     </HBox>
+
 
 </GridPane>

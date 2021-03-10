@@ -90,7 +90,7 @@ public class JanelaCadPintura implements Initializable {
     public void limpar(){
         tfDescricao.setText("");
         tfCor.setText("");
-        tfDescricao.setText("");
+        tfVMaoDeObra.setText("");
         tfCera.setText("");
         tfTinta.setText("");
     }

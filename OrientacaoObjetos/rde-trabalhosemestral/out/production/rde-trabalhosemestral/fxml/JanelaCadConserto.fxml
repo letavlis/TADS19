@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="Mecanica.janelas.JanelaCadConserto"
@@ -13,5 +16,12 @@
     </padding>
     <Label text="Descrição:" GridPane.columnIndex="0" GridPane.rowIndex="0" labelFor="$tfDescricao"/>
     <TextField fx:id="tfDescricao" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label text="Valor de mão de obra:" GridPane.columnIndex="0" GridPane.rowIndex="2" labelFor="$tfVMaoDeObra"/>
+    <TextField fx:id="tfVMaoDeObra" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <HBox GridPane.columnIndex="3" GridPane.rowIndex="5" spacing="5">
+        <Button text="Adicionar" onAction="#cadastrar"/>
+        <Button text="Limpar" onAction="#limpar"/>
+        <Button text="Voltar" onAction="#mostrarMenuServicos"/>
+    </HBox>
 
 </GridPane>

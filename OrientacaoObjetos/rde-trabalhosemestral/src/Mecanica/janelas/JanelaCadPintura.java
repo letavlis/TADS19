@@ -1,6 +1,7 @@
 package Mecanica.janelas;
 
 import Mecanica.controles.Mecanica;
+import Mecanica.MainGui;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -31,6 +32,10 @@ public class JanelaCadPintura implements Initializable {
     private void cadastrar(){
         String descricao = tfDescricao.getText();
         String cor = tfCor.getText();
+        double maoDeObra;
+        double cera;
+        double tinta;
+
 
 
         if (descricao.isBlank() || descricao.isEmpty()){
@@ -43,15 +48,39 @@ public class JanelaCadPintura implements Initializable {
             mensagem(Alert.AlertType.ERROR,"Cor invalida!!");
             return;
         }
+        try {
+            maoDeObra = Double.parseDouble(tfVMaoDeObra.getText());
+            }
+        catch (Exception e){
+            //TODO melhorar a validação
+            mensagem(Alert.AlertType.ERROR,"Valor de mão de obra invalido!!");
+            return;
+        }
+        try {
+            cera =  Double.parseDouble(tfCera.getText());
+        }
+        catch (Exception e){
+            //TODO melhorar a validação
+            mensagem(Alert.AlertType.ERROR,"Valor da cera invalido!!");
+            return;
+        }
+        try {
+            tinta = Double.parseDouble(tfTinta.getText());
+        }
+        catch (Exception e){
+            //TODO melhorar a validação
+            mensagem(Alert.AlertType.ERROR,"Valor da tinta invalido!!");
+            return;
+        }
 
-        //cadastrar veiculo
-       /* if(!mecanica.cadastraVeiculo(placa, ano, modelo, cliente)){
-            mensagem(Alert.AlertType.ERROR,"Veiculo não cadastrado");
+        //cadastrar pintura
+        if(!mecanica.cadastraServico(descricao, cor, maoDeObra, cera, tinta)){
+            mensagem(Alert.AlertType.ERROR,"Serviço não cadastrado");
         }
         else {
-            mensagem(Alert.AlertType.INFORMATION, "Veiculo cadastrado");
+            mensagem(Alert.AlertType.INFORMATION, "Serviço cadastrado");
             MainGui.mudaCena(MainGui.PRINCIPAL, (aClass) -> new Principal(mecanica));
-        }*/
+        }
 
     }
     private void mensagem(Alert.AlertType type ,String msg){
@@ -61,10 +90,17 @@ public class JanelaCadPintura implements Initializable {
     public void limpar(){
         tfDescricao.setText("");
         tfCor.setText("");
+        tfDescricao.setText("");
+        tfCera.setText("");
+        tfTinta.setText("");
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
+    @FXML
+    private void mostrarMenuServicos(){
+        MainGui.mudaCena(MainGui.CADSERVICO, (aClass) -> new JanelaCadServico(mecanica));
     }
 }

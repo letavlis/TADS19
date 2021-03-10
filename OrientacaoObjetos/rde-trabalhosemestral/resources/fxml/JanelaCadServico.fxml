@@ -10,13 +10,14 @@
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="Mecanica.janelas.JanelaCadServico"
-          prefHeight="400.0" prefWidth="300.0" vgap = "5" hgap = "5">
+          prefHeight="400.0" prefWidth="600.0" vgap = "15" hgap = "15">
     <padding>
         <Insets top="10" bottom="10" right="10" left="10" />
     </padding>
     <HBox GridPane.columnIndex="3" GridPane.rowIndex="3" spacing="5">
         <Button text="Cadastrar Pitura" onAction="#mostrarCadastroPintura"/>
         <!-- <Button text="Cadastrar Conserto" onAction="#cadastrarConserto"/>-->
+        <Button text="Voltar" onAction="#mostrarMenuPrincipal"/>
     </HBox>
 
 </GridPane>

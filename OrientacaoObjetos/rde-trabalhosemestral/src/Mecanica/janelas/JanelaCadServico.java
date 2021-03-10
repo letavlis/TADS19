@@ -27,4 +27,8 @@ public class JanelaCadServico implements Initializable {
     private void mostrarCadastroPintura(){
         MainGui.mudaCena(MainGui.CADPINTURA, (aClass)-> new JanelaCadPintura(mecanica));
     }
+    @FXML
+    private void mostrarMenuPrincipal(){
+        MainGui.mudaCena(MainGui.PRINCIPAL, (aClass) -> new Principal(mecanica));
+    }
 }

@@ -19,6 +19,7 @@ public class MainGui extends Application{
     public static final String CADSERVICO = "/fxml/JanelaCadServico.fxml";
     public static final String CADPINTURA = "/fxml/JanelaCadPintura.fxml";
     public static final String CADCONSERTO = "/fxml/JanelaCadConserto.fxml";
+    public static final String EMITIRRELATORIO ="/fxml/JanelaEmitirRelatorio.fxml";
 
     private Mecanica mecanica;
 

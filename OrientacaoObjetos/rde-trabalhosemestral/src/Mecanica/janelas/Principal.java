@@ -57,7 +57,6 @@ public class Principal implements Initializable {
         });
         atualizaListaVeiculo();
         atualizaListaServicos();
-        mecanica.relatorioVeiculos();
     }
 
     private void atualizaListaVeiculo(){
@@ -82,5 +81,9 @@ public class Principal implements Initializable {
     @FXML
     private void mostrarCadastroServico(){
         MainGui.mudaCena(MainGui.CADSERVICO, (aClass)-> new JanelaCadServico(mecanica));
+    }
+    @FXML
+    private void mostrarEmitirRelatorio(){
+        MainGui.mudaCena(MainGui.EMITIRRELATORIO, (aClass)-> new JanelaEmitirRelatorio(mecanica));
     }
 }

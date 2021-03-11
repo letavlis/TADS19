@@ -22,21 +22,27 @@
             <Button text="Cadastrar Veiculo" onAction="#mostrarCadastroVeiculo"/>
             <Button text="Cadastrar Serviço" onAction="#mostrarCadastroServico" />
             <Button text="Executar Serviço" />
-            <Button text="Emitir Relatórios"/>
         </HBox>
     </top>
-    <center>
+    <left>
         <HBox spacing="10">
-            <VBox spacing="5">
+            <Button text="Emitir Relatório Veiculos"/>
+            <Button text="Emitir Relatório Serviços"/>
+            <Button text="Emitir Relatório Execuções"/>
+        </HBox>
+    </left>
+    <bottom>
+        <HBox spacing="10">
+            <VBox spacing="1">
                 <Label text="Veiculos"/>
                 <ListView fx:id="lstwVeiculo"/>
             </VBox>
-          <VBox spacing="5">
+          <VBox spacing="1">
                 <Label text="Serviço"/>
-                <ListView/>
+                <ListView fx:id="lstwServicos"/>
             </VBox>
         </HBox>
-    </center>
+    </bottom>
 
 </BorderPane>
 <!--

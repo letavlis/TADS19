@@ -2,21 +2,27 @@ package Mecanica.janelas;
 
 import Mecanica.MainGui;
 import Mecanica.controles.Mecanica;
+import Mecanica.modelos.Servico;
 import Mecanica.modelos.Veiculo;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 
+
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
+
 
 
 public class Principal implements Initializable {
 
     @FXML
     private ListView<Veiculo> lstwVeiculo;
+    @FXML
+    private ListView<Servico> lstwServicos;
 
     private Mecanica mecanica;
 
@@ -38,8 +44,20 @@ public class Principal implements Initializable {
                 }
             }
         });
+        lstwServicos.setCellFactory(servicoListView -> new ListCell<>(){
+            @Override
+            protected void updateItem(Servico servico, boolean b){
+                super.updateItem(servico, b);
+                if(servico != null){
+                    setText(servico.getDesc());
+                }else{
+                    setText("");
+                }
+            }
+        });
         atualizaListaVeiculo();
-
+        atualizaListaServicos();
+        mecanica.relatorioVeiculos();
     }
 
     private void atualizaListaVeiculo(){
@@ -47,6 +65,13 @@ public class Principal implements Initializable {
         lstwVeiculo.getItems().clear();
         for (Veiculo v:veiculos){
             lstwVeiculo.getItems().add(v);
+        }
+    }
+    private void atualizaListaServicos(){
+        List<Servico> servico = this.mecanica.getServicos();
+        lstwServicos.getItems().clear();
+        for (Servico s:servico){
+            lstwServicos.getItems().add(s);
         }
     }
 

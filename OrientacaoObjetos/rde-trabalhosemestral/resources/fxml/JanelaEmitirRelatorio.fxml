@@ -20,16 +20,16 @@
         <padding>
             <Insets bottom="10"/>
         </padding>
-        <Button text="Emitir Relatório Veiculos"/>
-        <Button text="Emitir Relatório Serviços"/>
-        <Button text="Emitir Relatório Execuções"/>
+        <Button text="Emitir Relatório Veiculos" onMouseClicked="#relatorioV"/>
+        <Button text="Emitir Relatório Serviços" onMouseClicked="#relatorioS"/>
+        <Button text="Emitir Relatório Execuções" onMouseClicked="#relatorioE"/>
     </HBox>
 
 
     <HBox GridPane.columnIndex="0" GridPane.rowIndex="1" spacing="10" GridPane.columnSpan="4" GridPane.rowSpan="1" >
         <VBox spacing="10">
             <Label text="Dados"/>
-            <TextArea fx:id="txtaInfos"/>
+            <TextArea fx:id="txtaInfos" editable="false"/>
         </VBox>
     </HBox>
     <HBox  GridPane.columnIndex="0" GridPane.rowIndex="2" spacing="10">

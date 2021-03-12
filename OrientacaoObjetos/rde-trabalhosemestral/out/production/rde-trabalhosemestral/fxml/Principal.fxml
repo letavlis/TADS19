@@ -25,11 +25,6 @@
             <Button text="Emitir Relatório" onAction="#mostrarEmitirRelatorio"/>
         </HBox>
     </top>
-    <!--
-    <left>
-
-    </left>
-    -->
     <center>
         <HBox spacing="10">
             <VBox spacing="1">

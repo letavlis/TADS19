@@ -86,4 +86,8 @@ public class Principal implements Initializable {
     private void mostrarEmitirRelatorio(){
         MainGui.mudaCena(MainGui.EMITIRRELATORIO, (aClass)-> new JanelaEmitirRelatorio(mecanica));
     }
+    @FXML
+    private void mostrarExecutaServico(){
+        MainGui.mudaCena(MainGui.EXECUTASERVICO, (aClass)-> new JanelaExecutaServico(mecanica));
+    }
 }

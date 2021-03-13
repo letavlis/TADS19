@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class JanelaExecutaServico implements Initializable {
+public class JExecutaS implements Initializable {
     @FXML
     private ListView<Veiculo> lstwVeiculo;
     @FXML
@@ -26,7 +26,7 @@ public class JanelaExecutaServico implements Initializable {
 
     Mecanica mecanica;
 
-    public JanelaExecutaServico(Mecanica mecanica) {
+    public JExecutaS(Mecanica mecanica) {
         this.mecanica = mecanica;
     }
 
@@ -37,7 +37,7 @@ public class JanelaExecutaServico implements Initializable {
             protected void updateItem(Veiculo veiculo, boolean b) {
                 super.updateItem(veiculo, b);
                 if (veiculo != null){
-                    setText(veiculo.getPlaca());
+                    setText(veiculo.getPlc());
                 }else {
                     setText("");
                 }
@@ -58,7 +58,7 @@ public class JanelaExecutaServico implements Initializable {
         atualizaListaServicos();
     }
     @FXML
-    private void mostrarMenuPrincipal(){
+    private void MenuPrincipal(){
         MainGui.mudaCena(MainGui.PRINCIPAL, (aClass) -> new Principal(mecanica));
     }
     @FXML
@@ -66,41 +66,41 @@ public class JanelaExecutaServico implements Initializable {
         Veiculo v = lstwVeiculo.getSelectionModel().getSelectedItem();
         Servico s = lstwServicos.getSelectionModel().getSelectedItem();
         if(s!=null && v!=null) {
-            mecanica.executaServico(v, s);
+            mecanica.execServ(v, s);
 
             String str = "";
             str+= "Serviço executado: " +s.getDesc()+"\n";
-            str+= "Veiculo: " +v.getPlaca()+"\n";
+            str+= "Veiculo: " +v.getPlc()+"\n";
             str+= "Cliente: " +v.getCliente()+"\n";
             str+="\tMão de Obra: "+s.getValMO()+"\n";
             if(s instanceof Conserto){
                 Conserto cns = (Conserto) s;
                 str+="\t\tPeças: ";
-                for(String p: cns.getPecas()){
+                for(String p: cns.getPcs()){
                     str+=p+";";
                 }
-                str+="\n\t\tValor das Peças: "+cns.getValPecas();
-                str+="\n\t\tValor Total: "+cns.calculaTotal();
+                str+="\n\t\tValor das Peças: "+cns.getVPcs();
+                str+="\n\t\tValor Total: "+cns.cTotal();
             }else{
                 Pintura pin = (Pintura) s;
-                str+="\t\tValor da tinta: "+pin.getVTinta();
-                str+="\n\t\tValor da cera: "+pin.getVCera();
+                str+="\t\tValor da tinta: "+pin.getVTnt();
+                str+="\n\t\tValor da cera: "+pin.getVCr();
                 str+="\n\t\tCor: "+pin.getCor();
-                str+="\n\t\tValor Total: "+pin.calculaTotal();
+                str+="\n\t\tValor Total: "+pin.cTotal();
             }
             txtaInfos.clear();
             txtaInfos.setText(str);
         }
     }
     private void atualizaListaVeiculo(){
-        List<Veiculo> veiculos = this.mecanica.getVeiculos();
+        List<Veiculo> veiculos = this.mecanica.getVeics();
         lstwVeiculo.getItems().clear();
         for (Veiculo v:veiculos){
             lstwVeiculo.getItems().add(v);
         }
     }
     private void atualizaListaServicos(){
-        List<Servico> servico = this.mecanica.getServicos();
+        List<Servico> servico = this.mecanica.getServs();
         lstwServicos.getItems().clear();
         for (Servico s:servico){
             lstwServicos.getItems().add(s);

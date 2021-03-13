@@ -9,7 +9,7 @@
 <?import javafx.geometry.Insets?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
-          fx:controller="Mecanica.janelas.JanelaCadVeiculo"
+          fx:controller="Mecanica.janelas.JCadastraVeic"
           prefHeight="400.0" prefWidth="600.0" vgap = "5" hgap = "5">
 
     <padding>
@@ -36,7 +36,7 @@
     <HBox GridPane.columnIndex="0" GridPane.rowIndex="3" spacing="10" GridPane.columnSpan="4" GridPane.rowSpan="1">
         <VBox spacing="5">
             <Label text="Veiculos"/>
-            <ListView fx:id="lstwPlacas"/>
+            <ListView fx:id="lstwPlacas" onMouseClicked="#atualizaInfo"/>
         </VBox>
         <VBox spacing="5">
             <Label text="Dados"/>

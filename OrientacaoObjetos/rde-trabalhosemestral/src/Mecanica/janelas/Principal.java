@@ -38,7 +38,7 @@ public class Principal implements Initializable {
             protected void updateItem(Veiculo veiculo, boolean b) {
                 super.updateItem(veiculo, b);
                 if (veiculo != null){
-                    setText(veiculo.getPlaca());
+                    setText(veiculo.getPlc());
                 }else {
                     setText("");
                 }
@@ -60,14 +60,14 @@ public class Principal implements Initializable {
     }
 
     private void atualizaListaVeiculo(){
-        List<Veiculo> veiculos = this.mecanica.getVeiculos();
+        List<Veiculo> veiculos = this.mecanica.getVeics();
         lstwVeiculo.getItems().clear();
         for (Veiculo v:veiculos){
             lstwVeiculo.getItems().add(v);
         }
     }
     private void atualizaListaServicos(){
-        List<Servico> servico = this.mecanica.getServicos();
+        List<Servico> servico = this.mecanica.getServs();
         lstwServicos.getItems().clear();
         for (Servico s:servico){
             lstwServicos.getItems().add(s);
@@ -76,18 +76,18 @@ public class Principal implements Initializable {
 
     @FXML
     private void mostrarCadastroVeiculo(){
-        MainGui.mudaCena(MainGui.CADVEICULO, (aClass) -> new JanelaCadVeiculo(mecanica));
+        MainGui.mudaCena(MainGui.CADVEICULO, (aClass) -> new JCadastraVeic(mecanica));
     }
     @FXML
     private void mostrarCadastroServico(){
-        MainGui.mudaCena(MainGui.CADSERVICO, (aClass)-> new JanelaCadServico(mecanica));
+        MainGui.mudaCena(MainGui.CADSERVICO, (aClass)-> new JCadastraServ(mecanica));
     }
     @FXML
     private void mostrarEmitirRelatorio(){
-        MainGui.mudaCena(MainGui.EMITIRRELATORIO, (aClass)-> new JanelaEmitirRelatorio(mecanica));
+        MainGui.mudaCena(MainGui.EMITIRRELATORIO, (aClass)-> new JEmitirRelat(mecanica));
     }
     @FXML
     private void mostrarExecutaServico(){
-        MainGui.mudaCena(MainGui.EXECUTASERVICO, (aClass)-> new JanelaExecutaServico(mecanica));
+        MainGui.mudaCena(MainGui.EXECUTASERVICO, (aClass)-> new JExecutaS(mecanica));
     }
 }

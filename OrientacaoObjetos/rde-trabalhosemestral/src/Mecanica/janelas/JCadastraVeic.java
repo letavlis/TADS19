@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class JanelaCadVeiculo implements Initializable {
+public class JCadastraVeic implements Initializable {
     @FXML
     private TextField tfPlaca;
     @FXML
@@ -35,7 +35,7 @@ public class JanelaCadVeiculo implements Initializable {
             protected void updateItem(Veiculo veiculo, boolean b) {
                 super.updateItem(veiculo, b);
                 if (veiculo != null){
-                    setText(veiculo.getPlaca());
+                    setText(veiculo.getPlc());
                 }else {
                     setText("");
                 }
@@ -45,7 +45,7 @@ public class JanelaCadVeiculo implements Initializable {
     }
     Mecanica mecanica;
 
-    public JanelaCadVeiculo(Mecanica mecanica){
+    public JCadastraVeic(Mecanica mecanica){
         this.mecanica = mecanica;
     }
     @FXML
@@ -81,7 +81,7 @@ public class JanelaCadVeiculo implements Initializable {
 
 
         //cadastrar veiculo
-        if(!mecanica.cadastraVeiculo(placa, ano, modelo, cliente)){
+        if(!mecanica.cadastraVeic(placa, ano, modelo, cliente)){
             mensagem(Alert.AlertType.ERROR,"Veiculo não cadastrado");
         }
         else {
@@ -91,11 +91,24 @@ public class JanelaCadVeiculo implements Initializable {
 
     }
     private void atualizaLista(){
-        List<Veiculo> veiculos = this.mecanica.getVeiculos();
+        List<Veiculo> veiculos = this.mecanica.getVeics();
         lstwPlacas.getItems().clear();
         for(Veiculo v:veiculos){
             lstwPlacas.getItems().add(v);
         }
+    }
+    @FXML
+    private void atualizaInfo(){
+        Veiculo v = lstwPlacas.getSelectionModel().getSelectedItem();
+        if(v!=null){
+            String str = "";
+            str+= "Cliente: " +v.getCliente()+"\n";
+            str+= "Modelo: " +v.getMdl()+"\n";
+            str+= "Ano: " +v.getAno()+"\n";
+            txtaInfos.clear();
+            txtaInfos.setText(str);
+        }
+
     }
     private void mensagem(Alert.AlertType type ,String msg){
         Alert alert = new Alert(type,msg);

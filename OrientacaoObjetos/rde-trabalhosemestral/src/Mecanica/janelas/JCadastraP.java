@@ -8,33 +8,33 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
-
-public class JanelaCadConserto implements Initializable{
+public class JCadastraP implements Initializable {
     @FXML
     private TextField tfDescricao;
-   @FXML
-    private  TextField tfPecas;
+    @FXML
+    private  TextField tfCor;
     @FXML
     private TextField tfVMaoDeObra;
     @FXML
-    private  TextField tfVPecas;
+    private  TextField tfCera;
+    @FXML
+    private  TextField tfTinta;
 
     Mecanica mecanica;
-    public JanelaCadConserto(Mecanica mecanica){
+
+    public JCadastraP(Mecanica mecanica){
         this.mecanica = mecanica;
     }
 
     @FXML
     private void cadastrar(){
         String descricao = tfDescricao.getText();
-        ArrayList<String> pecas;
+        String cor = tfCor.getText();
         double maoDeObra;
-        double valorPcs;
-
+        double cera;
+        double tinta;
 
 
 
@@ -43,35 +43,38 @@ public class JanelaCadConserto implements Initializable{
             mensagem(Alert.AlertType.ERROR,"Descricao invalida!!");
             return;
         }
-        try {
-            pecas = new ArrayList<>(Arrays.<String>asList(String.valueOf(tfPecas)));
-        }
-        catch (Exception e){
+        if (cor.isBlank() || cor.isEmpty()){
             //TODO melhorar a validação
-            mensagem(Alert.AlertType.ERROR,"Peças invalidas!!");
+            mensagem(Alert.AlertType.ERROR,"Cor invalida!!");
             return;
         }
-
         try {
             maoDeObra = Double.parseDouble(tfVMaoDeObra.getText());
-        }
+            }
         catch (Exception e){
             //TODO melhorar a validação
             mensagem(Alert.AlertType.ERROR,"Valor de mão de obra invalido!!");
             return;
         }
         try {
-            valorPcs = Double.parseDouble(tfVPecas.getText());
+            cera =  Double.parseDouble(tfCera.getText());
         }
         catch (Exception e){
             //TODO melhorar a validação
-            mensagem(Alert.AlertType.ERROR,"Valor das peças invalido!!");
+            mensagem(Alert.AlertType.ERROR,"Valor da cera invalido!!");
+            return;
+        }
+        try {
+            tinta = Double.parseDouble(tfTinta.getText());
+        }
+        catch (Exception e){
+            //TODO melhorar a validação
+            mensagem(Alert.AlertType.ERROR,"Valor da tinta invalido!!");
             return;
         }
 
-
         //cadastrar pintura
-        if(!mecanica.cadastraServico(descricao, pecas, maoDeObra, valorPcs)){
+        if(!mecanica.cadastraS(descricao, cor, maoDeObra, cera, tinta)){
             mensagem(Alert.AlertType.ERROR,"Serviço não cadastrado");
         }
         else {
@@ -86,9 +89,10 @@ public class JanelaCadConserto implements Initializable{
     }
     public void limpar(){
         tfDescricao.setText("");
-        tfPecas.setText("");
+        tfCor.setText("");
         tfVMaoDeObra.setText("");
-        tfVPecas.setText("");
+        tfCera.setText("");
+        tfTinta.setText("");
     }
 
     @Override
@@ -96,8 +100,7 @@ public class JanelaCadConserto implements Initializable{
 
     }
     @FXML
-    private void mostrarMenuServicos(){
-        MainGui.mudaCena(MainGui.CADSERVICO, (aClass) -> new JanelaCadServico(mecanica));
+    private void MenuServicos(){
+        MainGui.mudaCena(MainGui.CADSERVICO, (aClass) -> new JCadastraServ(mecanica));
     }
 }
-

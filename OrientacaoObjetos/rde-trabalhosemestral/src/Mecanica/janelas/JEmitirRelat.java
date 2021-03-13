@@ -9,7 +9,7 @@ import javafx.scene.control.TextArea;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class JanelaEmitirRelatorio implements Initializable {
+public class JEmitirRelat implements Initializable {
     @FXML
     private TextArea txtaInfos;
     @Override
@@ -18,7 +18,7 @@ public class JanelaEmitirRelatorio implements Initializable {
     }
     Mecanica mecanica;
 
-    public JanelaEmitirRelatorio(Mecanica mecanica) {
+    public JEmitirRelat(Mecanica mecanica) {
         this.mecanica = mecanica;
     }
     @FXML
@@ -28,17 +28,17 @@ public class JanelaEmitirRelatorio implements Initializable {
     @FXML
     private void relatorioV(){
         txtaInfos.clear();
-        txtaInfos.setText(mecanica.relatorioVeiculos());
+        txtaInfos.setText(mecanica.relatorioV());
     }
     @FXML
     private void relatorioS(){
         txtaInfos.clear();
-        txtaInfos.setText(mecanica.relatorioServicos());
+        txtaInfos.setText(mecanica.relatorioS());
     }
     @FXML
     private void relatorioE(){
         txtaInfos.clear();
-        txtaInfos.setText(mecanica.relatorioExecucoes());
+        txtaInfos.setText(mecanica.relatorioE());
     }
 
 }

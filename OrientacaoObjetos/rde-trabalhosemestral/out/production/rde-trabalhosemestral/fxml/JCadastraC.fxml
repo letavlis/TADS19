@@ -9,26 +9,23 @@
 <?import javafx.geometry.Insets?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
-          fx:controller="Mecanica.janelas.JanelaCadPintura"
+          fx:controller="Mecanica.janelas.JCadastraC"
           prefHeight="400.0" prefWidth="600.0" vgap = "15" hgap = "5">
     <padding>
         <Insets top="20" bottom="10" left="20" right="10"/>
     </padding>
     <Label text="Descrição:" GridPane.columnIndex="0" GridPane.rowIndex="0" labelFor="$tfDescricao"/>
     <TextField fx:id="tfDescricao" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-    <Label text="Cor:" GridPane.columnIndex="0" GridPane.rowIndex="1" labelFor="$tfCor"/>
-    <TextField fx:id="tfCor" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Peças:" GridPane.columnIndex="0" GridPane.rowIndex="1" labelFor="$tfPecas"/>
+    <TextField fx:id="tfPecas" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
     <Label text="Valor de mão de obra:" GridPane.columnIndex="0" GridPane.rowIndex="2" labelFor="$tfVMaoDeObra"/>
     <TextField fx:id="tfVMaoDeObra" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    <Label text="Valor cera:" GridPane.columnIndex="0" GridPane.rowIndex="3" labelFor="$tfCera"/>
-    <TextField fx:id="tfCera" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-    <Label text="Valor tinta:" GridPane.columnIndex="0" GridPane.rowIndex="4" labelFor="$tfTinta"/>
-    <TextField fx:id="tfTinta" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-
+    <Label text="Valor Peças:" GridPane.columnIndex="0" GridPane.rowIndex="3" labelFor="$tfVPecas"/>
+    <TextField fx:id="tfVPecas" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
     <HBox GridPane.columnIndex="3" GridPane.rowIndex="5" spacing="5">
         <Button text="Adicionar" onAction="#cadastrar"/>
         <Button text="Limpar" onAction="#limpar"/>
-        <Button text="Voltar" onAction="#mostrarMenuServicos"/>
+        <Button text="Voltar" onAction="#MenuServicos"/>
     </HBox>
 
 </GridPane>

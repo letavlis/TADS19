@@ -77,8 +77,18 @@ public class AdicionarCliente {
             alert.showAndWait();
             return;
         }
-        if(clienteRepository.buscarCliente(nome, telefone, email) != null){
+        if(clienteRepository.buscarCliente(nome, telefone, email).getNome().equals(nome)){
             Alert alert = new Alert(Alert.AlertType.ERROR,"Cliente já existe");
+            alert.showAndWait();
+            return;
+        }
+        if(clienteRepository.buscarCliente(nome, telefone, email).getEmail().equals(email)){
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Email já cadastrado");
+            alert.showAndWait();
+            return;
+        }
+        if(clienteRepository.buscarCliente(nome, telefone, email).getTelefone().equals(telefone)){
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Telefone já cadastrado");
             alert.showAndWait();
             return;
         }

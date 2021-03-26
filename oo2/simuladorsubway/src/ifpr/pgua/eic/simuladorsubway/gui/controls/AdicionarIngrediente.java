@@ -85,13 +85,11 @@ public class AdicionarIngrediente {
             alert.showAndWait();
             return;
         }
-        if(ingredienteRepository.buscarIngrediente(nome, descricao, valor) != null){
+        if(ingredienteRepository.buscarIngrediente(nome) != null){
             Alert alert = new Alert(Alert.AlertType.ERROR,"Ingrediente já existe");
             alert.showAndWait();
             return;
         }
-
-
 
 
         Ingrediente ingrediente = new Ingrediente(nome,descricao,valor);

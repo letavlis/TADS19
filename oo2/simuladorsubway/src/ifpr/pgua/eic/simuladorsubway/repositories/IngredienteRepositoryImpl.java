@@ -18,12 +18,12 @@ public class IngredienteRepositoryImpl implements IngredienteRepository {
 
         ingredientes = FXCollections.observableArrayList();
     }
-
+    @Override
     public boolean adicionar(Ingrediente ingrediente){
         ingredientes.add(new Ingrediente(ingredientes.size(),ingrediente.getNome(),ingrediente.getDescricao(), ingrediente.getValor()));
         return true;
     }
-
+    @Override
     public boolean editar(int id, Ingrediente ingrediente){
 
         for(Ingrediente i:ingredientes){
@@ -38,27 +38,11 @@ public class IngredienteRepositoryImpl implements IngredienteRepository {
 
         return false;
     }
-    @Override
-    public Ingrediente buscarIngrediente(String nome, String descricao, double valor){
+    public Ingrediente buscarIngrediente(String nome){
         Optional<Ingrediente> ret = ingredientes.stream()
                 .filter((i -> i.getNome().equals(nome)))
                 .findFirst();
-        Optional<Ingrediente> ret1 = ingredientes.stream()
-                .filter((i -> i.getDescricao().equals(descricao)))
-                .findFirst();
-        Optional<Ingrediente> ret2 = ingredientes.stream()
-                .filter((i -> i.getValor()==valor))
-                .findFirst();
-        if(ret.isPresent()){
-            return ret.get();
-        }
-        else if( ret1.isPresent()){
-            return ret1.get();
-        }
-        else if( ret2.isPresent()){
-            return ret2.get();
-        }
-        return null;
+        return ret.orElse(null);
     }
 
     public ObservableList<Ingrediente> lista(){

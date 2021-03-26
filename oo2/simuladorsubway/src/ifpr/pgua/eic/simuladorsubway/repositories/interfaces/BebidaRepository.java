@@ -8,7 +8,7 @@ public interface BebidaRepository {
     boolean adicionar(Bebida bebida);
     boolean editar(int id, Bebida bebida);
 
-    Bebida buscarIngrediente(String nome, double valor);
+    Bebida buscarBebida(String nome);
 
     ObservableList<Bebida> lista();
 

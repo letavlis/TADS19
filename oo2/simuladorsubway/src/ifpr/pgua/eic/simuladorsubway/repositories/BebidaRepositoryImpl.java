@@ -42,20 +42,11 @@ public class BebidaRepositoryImpl implements BebidaRepository {
         return false;
     }
     @Override
-    public Bebida buscarIngrediente(String nome, double valor){
+    public Bebida buscarBebida(String nome){
         Optional<Bebida> ret = bebidas.stream()
                 .filter((b -> b.getNome().equals(nome)))
                 .findFirst();
-        Optional<Bebida> ret2 = bebidas.stream()
-                .filter((b -> b.getValor()==valor))
-                .findFirst();
-        if(ret.isPresent()){
-            return ret.get();
-        }
-        else if(ret.isPresent() && ret2.isPresent()){
-            return ret2.get();
-        }
-        return null;
+        return ret.orElse(null);
     }
 
     @Override

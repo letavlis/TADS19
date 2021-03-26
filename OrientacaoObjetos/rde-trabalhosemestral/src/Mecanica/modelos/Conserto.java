@@ -1,6 +1,5 @@
 package Mecanica.modelos;
 
-import java.util.Arrays;
 import java.util.ArrayList;
 
 public class Conserto extends Servico{
@@ -16,11 +15,11 @@ public class Conserto extends Servico{
 		this.valorPecas = valorPecas;
 	}
 
-	public ArrayList<String> getPecas(){
+	public ArrayList<String> getPcs(){
 		return this.pecas;
 	}
 
-	public double getValPecas(){
+	public double getVPcs(){
 		return this.valorPecas;
 	}
 
@@ -33,8 +32,8 @@ public class Conserto extends Servico{
 	}
 
 	@Override
-	public double calculaTotal(){
-		super.valorTotal = getValPecas() + super.getValMO();
+	public double cTotal(){
+		super.valorTotal = getVPcs() + super.getValMO();
 		return super.valorTotal;
 	}
 }

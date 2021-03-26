@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="Mecanica.janelas.JCadastraVeic"
+          prefHeight="400.0" prefWidth="600.0" vgap = "5" hgap = "5">
+
+    <padding>
+        <Insets top="10" bottom="10" right="10" left="10" />
+    </padding>
+
+    <Label text="Placa:" GridPane.columnIndex="0" GridPane.rowIndex="0" labelFor="$tfPlaca"/>
+    <TextField fx:id="tfPlaca" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+    <Label text="Modelo:" GridPane.columnIndex="0" GridPane.rowIndex="1" labelFor="$tfModelo"/>
+    <TextField fx:id="tfModelo" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="Ano:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    <ComboBox fx:id="cbAno" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+    <Label text="Cliente:" GridPane.columnIndex="0" GridPane.rowIndex="2" labelFor="$tfCliente"/>
+    <TextField fx:id="tfCliente" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <HBox GridPane.columnIndex="3" GridPane.rowIndex="4" spacing="5">
+        <Button text="Adicionar" onAction="#cadastrar"/>
+        <Button text="Limpar" onAction="#limpar"/>
+        <Button text="Voltar" onAction="#mostrarMenuPrincipal"/>
+    </HBox>
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="3" spacing="10" GridPane.columnSpan="4" GridPane.rowSpan="1">
+        <VBox spacing="5">
+            <Label text="Veiculos"/>
+            <ListView fx:id="lstwPlacas" onMouseClicked="#atualizaInfo"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Dados"/>
+            <TextArea fx:id="txtaInfos"/>
+        </VBox>
+    </HBox>
+</GridPane>

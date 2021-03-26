@@ -14,7 +14,7 @@ public class Servico implements Serializable{
 		this.valorMaodeObra = valorMaodeObra;
 	}
 
-	public double calculaTotal(){
+	public double cTotal(){
 		return this.valorTotal;
 	}
 

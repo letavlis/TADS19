@@ -18,17 +18,17 @@ public class Pintura extends Servico{
 		return this.cor;
 	}
 
-	public double getVTinta(){
+	public double getVTnt(){
 		return this.valorTinta;
 	}
 
-	public double getVCera(){
+	public double getVCr(){
 		return this.valorCera;
 	}
 
 	@Override
-	public double calculaTotal(){
-		super.valorTotal = super.getValMO()+getVTinta()+getVCera();
+	public double cTotal(){
+		super.valorTotal = super.getValMO()+ getVTnt()+ getVCr();
 		return super.valorTotal;
 	}
 }

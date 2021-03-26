@@ -15,11 +15,12 @@ import javafx.util.Callback;
 public class MainGui extends Application{
 
     public static final String PRINCIPAL = "/fxml/Principal.fxml";
-    public static final String CADVEICULO = "/fxml/JanelaCadVeiculo.fxml";
-    public static final String CADSERVICO = "/fxml/JanelaCadServico.fxml";
-    public static final String CADPINTURA = "/fxml/JanelaCadPintura.fxml";
-    public static final String CADCONSERTO = "/fxml/JanelaCadConserto.fxml";
-    public static final String EMITIRRELATORIO ="/fxml/JanelaEmitirRelatorio.fxml";
+    public static final String CADVEICULO = "/fxml/JCadastraVeic.fxml";
+    public static final String CADSERVICO = "/fxml/JCadastraServ.fxml";
+    public static final String CADPINTURA = "/fxml/JCadastraPi.fxml";
+    public static final String CADCONSERTO = "/fxml/JCadastraC.fxml";
+    public static final String EMITIRRELATORIO = "/fxml/JEmitirRelat.fxml";
+    public static final String EXECUTASERVICO = "/fxml/JExecutaS.fxml";
 
     private Mecanica mecanica;
 

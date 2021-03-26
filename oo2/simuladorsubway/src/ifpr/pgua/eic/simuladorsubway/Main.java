@@ -75,11 +75,11 @@ public class Main extends Application {
         bebidaRepository.adicionar(new Bebida("Suco de Graviola",3.0));
         bebidaRepository.adicionar(new Bebida("Suco de Acerola",3.5));
 
-        clienteRepository.adicionar(new Cliente("Cliente 1","0","cliente1@teste.com"));
-        clienteRepository.adicionar(new Cliente("Cliente 2","0","cliente2@teste.com"));
-        clienteRepository.adicionar(new Cliente("Cliente 3","0","cliente3@teste.com"));
-        clienteRepository.adicionar(new Cliente("Cliente 4","0","cliente4@teste.com"));
-        clienteRepository.adicionar(new Cliente("Cliente 5","0","cliente5@teste.com"));
+        clienteRepository.adicionar(new Cliente("Cliente 1","cliente1@teste.com","0"));
+        clienteRepository.adicionar(new Cliente("Cliente 2","cliente2@teste.com","0"));
+        clienteRepository.adicionar(new Cliente("Cliente 3","cliente3@teste.com","0"));
+        clienteRepository.adicionar(new Cliente("Cliente 4","cliente4@teste.com","0"));
+        clienteRepository.adicionar(new Cliente("Cliente 5","cliente5@teste.com","0"));
 
     }
 

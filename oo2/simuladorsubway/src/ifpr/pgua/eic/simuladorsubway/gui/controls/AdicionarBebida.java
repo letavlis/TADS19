@@ -2,6 +2,7 @@ package ifpr.pgua.eic.simuladorsubway.gui.controls;
 
 import ifpr.pgua.eic.simuladorsubway.Main;
 import ifpr.pgua.eic.simuladorsubway.models.Bebida;
+import ifpr.pgua.eic.simuladorsubway.repositories.BebidaRepositoryImpl;
 import ifpr.pgua.eic.simuladorsubway.repositories.interfaces.BebidaRepository;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -71,6 +72,11 @@ public class AdicionarBebida {
 
         if(valor <= 0.0){
             Alert alert = new Alert(Alert.AlertType.ERROR,"Valor inválido!!");
+            alert.showAndWait();
+            return;
+        }
+        if(bebidaRepository.buscarBebida(nome) != null){
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Bebida já existe");
             alert.showAndWait();
             return;
         }
